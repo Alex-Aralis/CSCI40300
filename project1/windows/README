@@ -1,0 +1,12 @@
+this project was built with a visual studio project
+
+the project and related files are in windows-vs/
+
+for convenience all the source files are place in the windows-src/ folder
+
+WARNING: the vs project is built with the ProducerConsumer.cpp in .../windows/windows-vs/examplecode/ 
+NOT windows-src.  Any modification to the files withing windows-src will not be reflected in 
+vs builds of the project.
+
+
+

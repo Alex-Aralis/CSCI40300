@@ -1,0 +1,15 @@
+To build project move to src directory and
+
+    $ make
+
+After compilation there should be 4 executables FCFS, SJFS, RR, and MLQ.
+
+When executed these executables will proform their corresponding portion of the project.
+
+The commands should look like
+
+    $ ./[SCHEDULER] [-v] [FILEPATH]
+
+Default file will be ./infile and default is quiet.
+
+To run in verbose mode pass -v.

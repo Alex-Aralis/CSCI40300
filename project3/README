@@ -1,0 +1,18 @@
+to build simply
+    
+    $ make
+
+to run 
+    
+    $ ./deadlock
+
+the data.txt file will be read from the working directory
+
+to enable some debugging output change 
+
+    bool v = false;
+
+to 
+    bool v = true;
+   
+

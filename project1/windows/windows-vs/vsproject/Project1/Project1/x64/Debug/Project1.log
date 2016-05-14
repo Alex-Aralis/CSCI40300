@@ -1,0 +1,4 @@
+﻿  ProducerConsumer.cpp
+c:\users\vraralis\dropbox\spring2016\cs 403\projects\project1\part1\windows\examplecode\producerconsumer.cpp(68): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Project1.vcxproj -> C:\Users\VRAralis\Dropbox\spring2016\CS 403\projects\project1\part1\windows\vsproject\Project1\x64\Debug\Project1.exe
+  Project1.vcxproj -> C:\Users\VRAralis\Dropbox\spring2016\CS 403\projects\project1\part1\windows\vsproject\Project1\x64\Debug\Project1.pdb (Partial PDB)

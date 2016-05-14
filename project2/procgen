@@ -1,0 +1,71 @@
+#!/bin/bash
+
+
+if [ -z $1 ]
+then
+    PROCS=100
+else
+    if [ $1 == '-h' ]
+    then
+        echo
+        echo usage: $0 '[PROCS [MAXARRIVAL [MAXEXECUTE [MAXIOEVENTS [MAXPRIORITY]]]]] |'
+        echo "       "$0 -h
+        echo
+        exit 0
+    fi
+            
+    PROCS=$1
+fi
+
+if [ -z $2 ]
+then
+    MAXARRIVAL=10000
+else
+    MAXARRIVAL=$2
+fi
+
+if [ -z $3 ]
+then
+    MAXEXECUTE=400
+else
+    MAXEXECUTE=$3
+fi
+
+if [ -z $4 ]
+then
+    MAXIOEVENTS=5
+else
+    MAXIOEVENTS=$(($4 + 1))
+fi
+
+if [ -z $5 ]
+then
+    MAXPRIORITY=4
+else
+    MAXPRIORITY=$5
+fi
+
+OFFSET=$(($RANDOM % $PROCS))
+
+for i in $(seq 0 $(($PROCS - 1)))
+do
+    EXECUTETIME=$(($RANDOM%$MAXEXECUTE + 1))
+    echo -n P$((($OFFSET+$i)%$PROCS)),$(($RANDOM%$MAXARRIVAL)),$EXECUTETIME\(
+        IOEVENTS=$(($RANDOM%$MAXIOEVENTS))
+        for j in $(seq 0 $IOEVENTS)
+        do
+            if [ $j == 0 ] 
+            then
+                continue
+            fi
+
+            echo -n $(($RANDOM%$EXECUTETIME))
+            if [ $j != $IOEVENTS ]
+            then
+                echo -n ,
+            fi
+        done
+        echo \)$(($RANDOM%$MAXPRIORITY))\;
+done
+
+
